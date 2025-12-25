@@ -5,204 +5,123 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chiến dịch Điện Biên Phủ</title>
     
-    <style>
-        /* Cấu hình chung cho toàn bộ trang */
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            padding-top: 60px; /* Tránh nội dung bị che bởi Header cố định */
+    <!DOCTYPE html>
+    <html lang="vi">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>Chiến dịch Điện Biên Phủ</title>
+      <style>
+        body{margin:0;
+            font-family:Arial,Helvetica,sans-serif;
+            color:#222
         }
-
-        /* Định dạng Thanh điều hướng (Header) cố định phía trên */
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 60px;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #333333;
-            z-index: 1000; /* Đảm bảo header luôn nằm trên các thành phần khác */
+        header{
+            background:#333;
+            color:#fff;
+            padding:12px 0
         }
-
-        /* Logo trang web */
-        .logo img {
-            height: 48px;
+        header .container{
+            max-width:1000px;
+            margin:0 auto;
+            padding:0 16px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center
         }
-
-        /* Danh sách các liên kết điều hướng */
-        .nav ul {
-            display: flex;
-            gap: 20px;
-            list-style: none;
-            margin: 0;
-            padding: 0;
+        nav a{
+            color:#fff;
+            text-decoration:none;
+            margin-left:12px;
+            font-size:15px
         }
-
-        .nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 16px;
+        .container{
+            max-width:1000px;
+            margin:20px auto;
+            padding:0 16px
         }
-
-        /* Khung chứa nội dung chính để căn giữa trang */
-        .container {
-            max-width: 1000px;
-            margin: 20px auto;
-            padding: 0 16px;
+        h1{
+            margin:0 0 12px
         }
-
-        /* Định dạng tiêu đề và các phần nội dung */
-        main h1 {
-            margin-top: 0;
+        section{
+            margin:18px 0
         }
-
-        section {
-            margin: 24px 0;
-            line-height: 1.6;
+        .person{
+            display:flex;
+            gap:12px;
+            margin-bottom:12px;
+            align-items:center
         }
-
-        /* Kiểu danh sách cho Dòng thời gian */
-        .timeline li {
-            margin-bottom: 8px;
+        .person img{
+            width:90px;
+            height:auto;
+            border-radius:4px
         }
-
-        /* Tối ưu hóa cho thiết bị di động (Responsive) */
-        @media (max-width:600px) {
-            .nav ul { gap: 10px; font-size:14px }
-            .logo img { height:40px }
+        footer{
+            background:#f4f4f4;
+            padding:12px;
+            text-align:center;
+            font-size:14px
         }
-
-        /* Định dạng danh sách Nhân vật lịch sử */
-        .person-list { display:flex; flex-direction:column; gap:12px; padding:0; margin:0; }
-        .person { display:flex; align-items:center; gap:12px; }
-        .person img { width:110px; height:auto; border-radius:6px; object-fit:cover; }
-
-        /* Khung hiển thị Video (tỷ lệ 16:9) */
-        .video-container { position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:8px; }
-        .video-container iframe, .video-container video { position:absolute; top:0; left:0; width:100%; height:100%; }
-
-        /* Định dạng Chân trang (Footer) */
-        .site-footer {
-            background: #222;
-            color: #ddd;
-            padding: 18px 0;
-            font-size: 14px;
+        @media(max-width:600px){
+            header .container{
+                flex-direction:column;gap:8px
+            }
+            nav a{
+                margin-left:8px
+            }
         }
-
-        .site-footer .container { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; }
-        .site-footer .footer-links a { color:#ddd; text-decoration:none; margin-left:12px }
-        .site-footer small { color:#aaa }
-    </style>
-</head>
-<body>
-    <header class="header">
-        <div class="logo">
-            <img src="logo-lichsuvietnam.png" alt="Logo">
-        </div>
-        <nav class="nav">
-            <ul>
-                <li><a href="#timeline">Dòng thời gian</a></li>
-                <li><a href="#figures">Nhân vật</a></li>
-                <li><a href="#legacy">Di tích</a></li>
-                <li><a href="#outcome">Tin tức</a></li>
-                <li><a href="#">Tìm kiếm</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main class="container">
-        <article>
-            <header>
-                <h1>Chiến dịch Điện Biên Phủ (1954)</h1>
-                <p><em>Chiến dịch Điện Biên Phủ</em> là một trong những trận quyết chiến mang tính bước ngoặt của lịch sử Việt Nam trong thế kỷ 20. Diễn ra từ tháng 3 đến tháng 5 năm 1954, thắng lợi của Quân đội Nhân dân Việt Nam trước quân đội Pháp đã góp phần làm thay đổi cục diện cuộc chiến và dẫn tới Hiệp định Giơnevơ.</p>
-            </header>
-
-            <section id="overview">
-                <h2>Tổng quan</h2>
-                <p>Chiến dịch được lãnh đạo bởi Đại tướng Võ Nguyên Giáp, với âm mưu tiêu diệt tập đoàn cứ điểm Điện Biên Phủ — một vị trí chiến lược do Pháp chiếm giữ ở Tây Bắc Việt Nam. Sau nhiều tuần pháo kích, vận chuyển chiến lược và các trận đánh quyết liệt, lực lượng Việt Minh đã đánh bại phòng tuyến Pháp và buộc đối phương đầu hàng ngày 7 tháng 5 năm 1954.</p>
-            </section>
-
-            <section id="timeline">
-                <h2>Dòng thời gian chính</h2>
-                <ul class="timeline">
-                    <li><strong>13/3/1954:</strong> Bắt đầu chuẩn bị tác chiến, tập trung lực lượng.</li>
-                    <li><strong>13/3/1954 - 7/5/1954:</strong> Các trận đánh chính diễn ra, bao gồm pháo binh và tấn công các cứ điểm.</li>
-                    <li><strong>7/5/1954:</strong> Quân đội Pháp do Tướng Christian de Castries chỉ huy đầu hàng.</li>
-                    <li><strong>Tháng 7/1954:</strong> Hiệp định Genève được ký, chia cắt tạm thời hai miền Việt Nam tại vĩ tuyến 17.</li>
-                </ul>
-            </section>
-
-            <section id="figures">
-                <h2>Nhân vật tiêu biểu</h2>
-                <div class="person-list">
-                    <div class="person">
-                        <img src="VoNguyenGiap.jpg" alt="Võ Nguyên Giáp">
-                        <div>
-                            <strong>Đại tướng Võ Nguyên Giáp</strong>
-                            <div>Tổng chỉ huy chiến dịch, người xây dựng và thực hiện kế hoạch tác chiến.</div>
-                        </div>
-                    </div>
-
-                    <div class="person">
-                        <img src="Christian-de-Castries.jpg" alt="Christian de Castries">
-                        <div>
-                            <strong>Tướng Christian de Castries</strong>
-                            <div>Chỉ huy lực lượng Pháp tại Điện Biên Phủ.</div>
-                        </div>
-                    </div>
-
-                    <div class="person">
-                        <img src="Ho_Chi_Minh.jpg" alt="Hồ Chí Minh">
-                        <div>
-                            <strong>Chủ tịch Hồ Chí Minh</strong>
-                            <div>Lãnh đạo chính trị cao nhất của Việt Nam Dân chủ Cộng hòa thời kỳ đó.</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="outcome">
-                <h2>Kết quả và ý nghĩa</h2>
-                <p>Thắng lợi tại Điện Biên Phủ kết thúc trọng địa vị chiến lược của Pháp ở Đông Dương, dẫn đến đàm phán và ký kết Hiệp định Genève. Về lâu dài, chiến thắng này có ý nghĩa biểu tượng lớn, củng cố tinh thần kháng chiến và ảnh hưởng tới phong trào giải phóng dân tộc tại khu vực.</p>
-            </section>
-
-            <section id="legacy">
-                <h2>Di tích và tưởng niệm</h2>
-                <p>Ngày nay, Điện Biên Phủ là địa điểm lịch sử, có nhiều di tích, bảo tàng và chiến khu được gìn giữ để tưởng nhớ những người đã hy sinh và để giáo dục thế hệ sau về một mốc son trong lịch sử dân tộc.</p>
-            </section>
-
-            <section id="video">
-                <h2>Video tham khảo</h2>
-                <div class="video-container">
-                    <video controls preload="metadata" poster="images/video_thumb.jpg">
-                        <source src="DienBienPhu.mp4" type="video/mp4">
-                        <source src="DienBienPhu.webm" type="video/webm">
-                        Trình duyệt của bạn không hỗ trợ thẻ video.
-                    </video>
-                </div>
-                <p>Link YouTube: <a href="https://www.youtube.com/watch?v=zRa9rAOWrKg&t=40s" target="_blank" rel="noopener">Chiến dịch Điện Biên Phủ (YouTube)</a></p>
-            </section>
-        </article>
-    </main>
-
-    <footer class="site-footer">
+      </style>
+    </head>
+    <body>
+      <header>
         <div class="container">
-            <div>
-                <strong>Chiến dịch Điện Biên Phủ</strong>
-                <div><small>© 2025 Tài liệu tham khảo. Mọi quyền được bảo lưu.</small></div>
-            </div>
-            <div class="footer-links">
-                <a href="#overview">Tổng quan</a>
-                <a href="#timeline">Dòng thời gian</a>
-                <a href="#figures">Nhân vật</a>
-                <a href="#video">Video</a>
-                <a href="mailto:vuhoang221223@gmail.com">Liên hệ Trịnh Vũ Hoàng</a>
-            </div>
+          <div class="brand"><strong>Điện Biên Phủ</strong></div>
+          <nav>
+            <a href="#overview">Tổng quan</a>
+            <a href="#timeline">Dòng thời gian</a>
+            <a href="#figures">Nhân vật</a>
+            <a href="#video">Video</a>
+          </nav>
         </div>
-    </footer>
-</body>
-</html>
+      </header>
+
+      <main class="container">
+        <h1>Chiến dịch Điện Biên Phủ (1954)</h1>
+
+        <section id="overview">
+          <h2>Tổng quan</h2>
+          <p>Chiến dịch do Đại tướng Võ Nguyên Giáp chỉ huy, diễn ra từ tháng 3 đến tháng 5 năm 1954 tại Điện Biên Phủ (Tây Bắc). Thắng lợi đã buộc quân Pháp đầu hàng và làm thay đổi cục diện chính trị ở Đông Dương.</p>
+        </section>
+
+        <section id="timeline">
+          <h2>Dòng thời gian ngắn</h2>
+          <ul>
+            <li><strong>13/3/1954:</strong> Bắt đầu triển khai.</li>
+            <li><strong>7/5/1954:</strong> Quân Pháp đầu hàng.</li>
+            <li><strong>7/1954:</strong> Hiệp định Genève được ký.</li>
+          </ul>
+        </section>
+
+        <section id="figures">
+          <h2>Nhân vật tiêu biểu</h2>
+          <div class="person"><img src="VoNguyenGiap.jpg" alt="Võ Nguyên Giáp"><div><strong>Võ Nguyên Giáp</strong><div>Tổng chỉ huy chiến dịch.</div></div></div>
+          <div class="person"><img src="Ho_Chi_Minh.jpg" alt="Hồ Chí Minh"><div><strong>Hồ Chí Minh</strong><div>Lãnh đạo chính trị của Việt Nam Dân chủ Cộng hòa.</div></div></div>
+          <div class="person"><img src="Christian-de-Castries.jpg" alt="Christian de Castries"><div><strong>Christian de Castries</strong><div>Chỉ huy lực lượng Pháp tại Điện Biên Phủ.</div></div></div>
+        </section>
+
+        <section id="video">
+          <h2>Video tham khảo</h2>
+          <video controls width="100%" poster="images/video_thumb.jpg">
+            <source src="DienBienPhu.mp4" type="video/mp4">
+            <source src="DienBienPhu.webm" type="video/webm">
+            Trình duyệt của bạn không hỗ trợ thẻ video. Xem trên <a href="https://www.youtube.com/watch?v=zRa9rAOWrKg&t=40s" target="_blank" rel="noopener">YouTube</a>.
+          </video>
+        </section>
+      </main>
+
+      <footer>
+        © 2025 — Liên hệ: <a href="mailto:vuhoang221223@gmail.com">vuhoang221223@gmail.com</a>
+      </footer>
+    </body>
+    </html>
